@@ -1,11 +1,12 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
-import projects from "@/utils/mock-projects";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 import gradient from "@/assets/gradient.png";
+import { getAllProjects } from "@/utils/firebase";
 
-const Home: React.FC = () => {
+const Home = async () => {
+  const projects = await getAllProjects();
   return (
     <div className="container py-4 px-2 sm:px-4 h-full">
       <Image

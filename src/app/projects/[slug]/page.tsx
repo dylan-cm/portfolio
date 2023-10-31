@@ -1,18 +1,14 @@
 import React from "react";
-import Navbar from "../../../components/Navbar";
-import projects from "@/utils/mock-projects";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { MdScience } from "react-icons/md";
+import { getImageURL, getImages, getProject } from "@/utils/firebase";
 
-export default function ProjectDetails({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const id = params.slug;
-  const project = projects.find((item) => item.id === id);
+const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
+  const project = await getProject(params.slug);
+  const video = await getImageURL(project?.video);
+  const pictures = await getImages(project?.pictures);
 
   if (!project) {
     return <div>Project not found</div>;
@@ -43,7 +39,7 @@ export default function ProjectDetails({
           </a>
         </div>
         <img
-          src={project.video}
+          src={video}
           alt={`${project.title} image 1`}
           className="rounded object-cover aspect-video"
         />
@@ -52,43 +48,43 @@ export default function ProjectDetails({
       <section id="description1">
         <div className="grid grid-cols-2 gap-4 w-full">
           <img
-            src={project.pictures[0]}
+            src={pictures[0]}
             alt={`${project.title} image 2`}
             className="rounded object-cover aspect-mobile"
           />
           <img
-            src={project.pictures[1]}
+            src={pictures[1]}
             alt={`${project.title} image 3`}
             className="rounded object-cover aspect-mobile"
           />
         </div>
       </section>
       <section id="description2">
-        <p className="my-16 max-w-6xl">{project.description1}</p>
+        <p className="my-16 max-w-6xl">{project.description2}</p>
       </section>
       <section
         id="description3"
         className="grid grid-cols-2 grid-flow-row gap-4 auto-rows-min"
       >
         <img
-          src={project.pictures[2]}
+          src={pictures[2]}
           alt={`${project.title} image 4`}
           className="rounded object-cover row-start-1 row-span-1 col-start-1 col-span-2 aspect-video"
         />
         <img
-          src={project.pictures[3]}
+          src={pictures[3]}
           alt={`${project.title} image 5`}
           className="rounded object-cover aspect-square"
         />
         <img
-          src={project.pictures[4]}
+          src={pictures[4]}
           alt={`${project.title} image 6`}
           className="rounded object-cover aspect-square"
         />
       </section>
-      <p className="my-16 max-w-6xl">{project.description1}</p>
+      <p className="my-16 max-w-6xl">{project.description3}</p>
       <img
-        src={project.pictures[5]}
+        src={pictures[5]}
         alt={`${project.title} image 7`}
         className="rounded object-cover aspect-video"
       />
@@ -97,4 +93,6 @@ export default function ProjectDetails({
       </Link>
     </div>
   );
-}
+};
+
+export default ProjectDetails;

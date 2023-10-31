@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container">
         <ul className="flex items-center gap-8 container">
           <li className="flex-grow font-black">
-            <Link href="/">DMC</Link>
+            <Link href="/">DCM</Link>
           </li>
           <li>
             <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer">
