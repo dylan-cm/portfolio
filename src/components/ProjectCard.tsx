@@ -4,20 +4,22 @@ import getIcon from "../utils/Icons";
 import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { MdScience } from "react-icons/md";
+import { getImageURL } from "@/utils/firebase";
 
 type ProjectCardProps = {
   project: Project;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = async ({ project }) => {
+  const thumbnail = await getImageURL(project.thumbnail);
   return (
-    <div className={`py-2  `}>
+    <div className={`py-2`}>
       <Link
         href={`/projects/${encodeURIComponent(project.id)}`}
         className="flex-shrink-0 flex gap-2"
       >
         <img
-          src={project.thumbnail}
+          src={thumbnail}
           alt={`${project.title} thumbnail`}
           className="w-24 md:w-36 object-cover rounded"
         />
