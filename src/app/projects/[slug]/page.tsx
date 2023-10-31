@@ -15,7 +15,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="container flex flex-col items-center mx-auto p-2">
+    <div className="container flex flex-col items-center mx-auto p-2 pt-8">
       <section id="title" className="flex flex-col items-center">
         <h1 className="text-4xl font-bold mb-4 text-center">{project.title}</h1>
         <div className="flex gap-6 mb-16">
