@@ -12,11 +12,7 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, isLast }) => {
   return (
-    <div
-      className={`py-2 bg-white ${
-        isLast ? "" : "border-b border-b-neutral-200 lg:border-b-0"
-      }`}
-    >
+    <div className={`py-2  `}>
       <Link
         href={`/projects/${encodeURIComponent(project.id)}`}
         className="flex-shrink-0 flex gap-2"

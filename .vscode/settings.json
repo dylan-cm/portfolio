@@ -1,0 +1,7 @@
+{
+  "search.exclude": {
+    "**/node_modules": false,
+    "**/node-modules": true
+  },
+  "cSpell.words": ["headshot", "Starscape"]
+}

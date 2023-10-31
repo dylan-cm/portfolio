@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { CONTACT_LINK, RESUME_LINK } from "@/utils/constants";
+import Starscape from "@/components/Starscape";
+
+const DEFAULT_DENSITY = 5;
+const DEFAULT_SIZE = 4;
+const DEFAULT_SCALE = 12;
+const DEFAULT_PROXIMITY = 0.1;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +24,57 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <footer className="mt-10 bg-brand-primary text-white w-full aspect-video flex flex-col items-center justify-end p-4">
-        <p className="italic self-end">See you space cowboy...</p>
-      </footer>
+      <body
+        className={`h-full min-h-screen ${inter.className} flex flex-col items-center relative`}
+      >
+        {/* <div className=" bg-gradient-to-t from-red-500 to-blue-500 w-full h-full absolute top-0 left-0" /> */}
+        <div className="flex-grow min-h-[80vh] z-10">{children}</div>
+        <footer className="relative mt-10 bg-gradient-to-b from-white to-brand-primary to-70% text-white h-64 w-full overflow-clip pb-6 px-4">
+          <div className="w-full h-full flex flex-col gap-16 items-center justify-end">
+            <ul className="w-full flex justify-around items-center text-sm z-10">
+              <li>
+                <Link href="/#top">Home</Link>
+              </li>
+              <li>
+                <Link href="/#projects">Projects</Link>
+              </li>
+              {/* <li>
+                <Link href="/#about">About</Link>
+              </li> */}
+              <li>
+                <a
+                  href={CONTACT_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer">
+                  Resume
+                </a>
+              </li>
+            </ul>
+            <a
+              href="https://youtu.be/EL-D9LrFJd4?si=b9Uuuv_qceHf5ahb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic self-end text-lg z-10"
+            >
+              See you space cowboy...
+            </a>
+          </div>
+          <Starscape
+            height={400}
+            densityRatio={DEFAULT_DENSITY}
+            sizeLimit={DEFAULT_SIZE}
+            scaleLimit={DEFAULT_SCALE}
+            proximityRatio={DEFAULT_PROXIMITY}
+            starColor="hsla(50, 100%, 100%, 0.15)"
+          />
+        </footer>
+      </body>
     </html>
   );
 }
