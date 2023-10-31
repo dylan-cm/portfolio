@@ -47,16 +47,20 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
       <p className="my-16 max-w-6xl">{project.description1}</p>
       <section id="description1">
         <div className="grid grid-cols-2 gap-4 w-full">
-          <img
-            src={pictures[0]}
-            alt={`${project.title} image 2`}
-            className="rounded object-cover aspect-mobile"
-          />
-          <img
-            src={pictures[1]}
-            alt={`${project.title} image 3`}
-            className="rounded object-cover aspect-mobile"
-          />
+          <a href={pictures[0]}>
+            <img
+              src={pictures[0]}
+              alt={`${project.title} image 2`}
+              className="rounded object-cover aspect-mobile"
+            />
+          </a>
+          <a href={pictures[1]}>
+            <img
+              src={pictures[1]}
+              alt={`${project.title} image 3`}
+              className="rounded object-cover aspect-mobile"
+            />
+          </a>
         </div>
       </section>
       <section id="description2">
@@ -66,28 +70,36 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
         id="description3"
         className="grid grid-cols-2 grid-flow-row gap-4 auto-rows-min"
       >
-        <img
-          src={pictures[2]}
-          alt={`${project.title} image 4`}
-          className="rounded object-cover row-start-1 row-span-1 col-start-1 col-span-2 aspect-video"
-        />
-        <img
-          src={pictures[3]}
-          alt={`${project.title} image 5`}
-          className="rounded object-cover aspect-square"
-        />
-        <img
-          src={pictures[4]}
-          alt={`${project.title} image 6`}
-          className="rounded object-cover aspect-square"
-        />
+        <a href={pictures[2]}>
+          <img
+            src={pictures[2]}
+            alt={`${project.title} image 4`}
+            className="rounded object-cover row-start-1 row-span-1 col-start-1 col-span-2 aspect-video"
+          />
+        </a>
+        <a href={pictures[3]}>
+          <img
+            src={pictures[3]}
+            alt={`${project.title} image 5`}
+            className="rounded object-cover aspect-square"
+          />
+        </a>
+        <a href={pictures[4]}>
+          <img
+            src={pictures[4]}
+            alt={`${project.title} image 6`}
+            className="rounded object-cover aspect-square"
+          />
+        </a>
       </section>
       <p className="my-16 max-w-6xl">{project.description3}</p>
-      <img
-        src={pictures[5]}
-        alt={`${project.title} image 7`}
-        className="rounded object-cover aspect-video"
-      />
+      <a href={pictures[5]}>
+        <img
+          src={pictures[5]}
+          alt={`${project.title} image 7`}
+          className="rounded object-cover aspect-video"
+        />
+      </a>
       <Link href={"/"} className="mt-16 underline underline-offset-4">
         See more projects
       </Link>
