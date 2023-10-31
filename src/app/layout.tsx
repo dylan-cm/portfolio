@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-full min-h-screen ${inter.className} flex flex-col items-center relative`}
+        className={`h-full min-h-screen w-full ${inter.className} flex flex-col items-center relative`}
       >
         <Navbar />
         {/* <div className=" bg-gradient-to-t from-red-500 to-blue-500 w-full h-full absolute top-0 left-0" /> */}
-        <div className="flex-grow min-h-[80vh] z-10">{children}</div>
+        <div className="flex-grow min-h-[80vh] z-10 w-full">{children}</div>
         <footer className="relative mt-10 bg-gradient-to-b from-white to-brand-primary to-70% text-white h-64 w-full overflow-clip pb-6 px-4">
           <div className="w-full h-full flex flex-col gap-16 items-center justify-end">
             <ul className="w-full flex justify-around items-center text-sm z-10">

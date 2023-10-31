@@ -6,10 +6,16 @@ import gradient from "@/assets/gradient.png";
 const Navbar = () => {
   return (
     <nav
-      className={`sticky flex justify-center items-center  z-50 top-0 w-full mb-8 navbar shadow-xl transition-shadow duration-500 overflow-clip py-4 px-4`}
+      className={`sticky flex justify-center items-center  z-50 top-0 w-full navbar shadow-xl transition-shadow duration-500 overflow-clip py-4 px-4`}
     >
       <div className="absolute w-full h-14 top-0 left-0 -z-20 ">
-        <Image src={gradient} alt="gradient" priority />
+        <Image
+          src={gradient}
+          alt="gradient"
+          priority
+          sizes="100vw"
+          style={{ width: "100%" }}
+        />
       </div>
 
       <div className="container">

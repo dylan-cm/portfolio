@@ -8,18 +8,11 @@ import { getAllProjects } from "@/utils/firebase";
 const Home = async () => {
   const projects = await getAllProjects();
   return (
-    <div className="container py-4 px-2 sm:px-4 h-full">
-      <Image
-        src={gradient}
-        alt="Gradient Background"
-        className="absolute top-0 left-0 -z-10"
-        priority
-      />
-
+    <div className="w-full flex flex-col items-center  h-full">
       <Hero />
       <section
         id="projects"
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-10 h-full w-full"
+        className="container grid grid-cols-1 lg:grid-cols-2 gap-12 pt-10 py-4 px-2 sm:px-4 h-full w-full"
       >
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
