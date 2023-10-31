@@ -7,10 +7,9 @@ import { MdScience } from "react-icons/md";
 
 type ProjectCardProps = {
   project: Project;
-  isLast?: boolean;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, isLast }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className={`py-2  `}>
       <Link
@@ -54,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, isLast }) => {
           {project.demo ? "View Demo" : "View Site"}
         </a>
       </div>
-      <ul className="flex gap-2 overflow-x-scroll hide-scrollbar p-0">
+      <ul className="flex gap-2 overflow-x-scroll hide-scrollbar mx-2">
         {project.technologies.map((tech, index) => (
           <li
             key={index}
