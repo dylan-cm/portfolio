@@ -1,8 +1,6 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import Hero from "@/components/Hero";
-import Image from "next/image";
-import gradient from "@/assets/gradient.png";
 import { getAllProjects } from "@/utils/firebase";
 
 const Home = async () => {
