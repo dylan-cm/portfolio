@@ -10,7 +10,8 @@ type Project = {
   technologies: string[];
   thumbnail: string;
   pictures: string[];
-  video: string;
+  videoId?: string;
+  headerImage?: string;
 };
 
 export default Project;

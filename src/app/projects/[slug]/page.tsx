@@ -4,10 +4,11 @@ import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { MdScience } from "react-icons/md";
 import { getImageURL, getImages, getProject } from "@/utils/firebase";
+import Video from "@/components/Video";
 
 const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   const project = await getProject(params.slug);
-  const video = await getImageURL(project?.video);
+  const header = await getImageURL(project?.videoId);
   const pictures = await getImages(project?.pictures);
 
   if (!project) {
@@ -16,7 +17,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="container flex flex-col items-center mx-auto p-2 pt-8">
-      <section id="title" className="flex flex-col items-center">
+      <section id="title" className="flex flex-col items-center w-full">
         <h1 className="text-4xl font-bold mb-4 text-center">{project.title}</h1>
         <div className="flex gap-6 mb-16">
           <a
@@ -38,11 +39,11 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
             {project.demo ? "View Demo" : "View Site"}
           </a>
         </div>
-        <img
-          src={video}
-          alt={`${project.title} image 1`}
-          className="rounded object-cover aspect-video"
-        />
+        {header ? (
+          <Video image={header} />
+        ) : (
+          <Video videoId={project.videoId} />
+        )}
       </section>
       <p className="my-16 max-w-6xl">{project.description1}</p>
       <section id="description1">
