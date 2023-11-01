@@ -35,3 +35,37 @@ yarn-error.log*
 next-env.d.ts
 
 *.env
+
+# Firebase
+firebase-debug.log
+.firebaserc
+.firebase/
+.firebaseui-builder/
+firestore.indexes.json
+firestore.rules
+storage.rules
+firestore.indexes
+firebase.json
+
+# Node (Firebase Cloud Functions)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Firebase Hosting
+public/
+
+# Firebase Emulator
+*.emulator.*.cache
+
+# IDEs and editors
+*.iml
+*.log
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
