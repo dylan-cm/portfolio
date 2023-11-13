@@ -5,6 +5,7 @@ import { getAllProjects } from "@/utils/firebase";
 
 const Home = async () => {
   const projects = await getAllProjects();
+
   return (
     <div className="w-full flex flex-col items-center  h-full">
       <Hero />

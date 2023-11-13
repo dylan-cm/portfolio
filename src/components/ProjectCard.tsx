@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = async ({ project }) => {
         <img
           src={thumbnail}
           alt={`${project.title} thumbnail`}
-          className="w-24 md:w-36 object-cover rounded"
+          className="w-24 md:w-36 object-cover rounded aspect-square"
         />
         <div className="flex flex-col gap-2 justify-between">
           <h2 className="text-2xl font-bold">{project.title}</h2>

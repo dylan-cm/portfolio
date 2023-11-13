@@ -75,7 +75,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           <img
             src={pictures[2]}
             alt={`${project.title} image 4`}
-            className="rounded object-cover row-start-1 row-span-1 col-start-1 col-span-2 aspect-video"
+            className="rounded object-cover aspect-square"
           />
         </a>
         <a href={pictures[3]}>
@@ -92,12 +92,19 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
             className="rounded object-cover aspect-square"
           />
         </a>
+        <a href={pictures[5]}>
+          <img
+            src={pictures[5]}
+            alt={`${project.title} image 7`}
+            className="rounded object-cover aspect-square"
+          />
+        </a>
       </section>
       <p className="my-16 max-w-6xl">{project.description3}</p>
-      <a href={pictures[5]}>
+      <a href={pictures[6]}>
         <img
-          src={pictures[5]}
-          alt={`${project.title} image 7`}
+          src={pictures[6]}
+          alt={`${project.title} image 8`}
           className="rounded object-cover aspect-video"
         />
       </a>
