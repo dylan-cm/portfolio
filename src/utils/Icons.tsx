@@ -1,6 +1,12 @@
 import { Fragment } from "react";
-import { FaReact, FaShopify } from "react-icons/fa";
-import { SiTypescript, SiCss3, SiHtml5, SiTailwindcss } from "react-icons/si";
+import { FaFigma, FaGithubAlt, FaReact, FaShopify } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiCss3,
+  SiHtml5,
+  SiTailwindcss,
+  SiGraphql,
+} from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
 type TechnologyNames =
@@ -12,6 +18,9 @@ type TechnologyNames =
   | "nextjs"
   | "tailwind"
   | "react_native"
+  | "git"
+  | "figma"
+  | "graphql"
   | string;
 
 const Icons: Record<TechnologyNames, JSX.Element> = {
@@ -23,6 +32,9 @@ const Icons: Record<TechnologyNames, JSX.Element> = {
   css: <SiCss3 />,
   html: <SiHtml5 />,
   tailwind: <SiTailwindcss />,
+  git: <FaGithubAlt />,
+  figma: <FaFigma />,
+  graphql: <SiGraphql />,
   default: <Fragment />,
 };
 const getIcon = (tech: TechnologyNames): JSX.Element => {
