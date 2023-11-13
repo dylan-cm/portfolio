@@ -12,7 +12,10 @@ const Video = ({ videoId, image }: VideoProps) => {
   if (videoId)
     return (
       <div className="video-responsive-wrapper pt-[56.25%] lg:pt-[540px]">
-        <YouTube videoId={videoId} />
+        <YouTube
+          videoId={videoId}
+          opts={{ playerVars: { autoplay: 1, loop: 1, playlist: videoId } }}
+        />
       </div>
     );
   else
