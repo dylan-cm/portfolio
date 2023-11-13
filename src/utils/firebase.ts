@@ -29,6 +29,7 @@ export async function getAllProjects(): Promise<Project[]> {
   const querySnapshot = await getDocs(collection(db, "projects"));
   querySnapshot.forEach((doc) => {
     const data = doc.data() as Project; // Cast the data to the Project type
+
     projects.push({
       ...data,
       id: doc.id,
@@ -71,4 +72,16 @@ export async function getImages(imagePaths?: string[]) {
   return await Promise.all(
     imagePaths.map(async (path) => await getImageURL(path))
   );
+}
+
+export async function getResume() {
+  const docRef = doc(db, "site", "settings");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    const data = docSnap.data() as { resume: string };
+    return data.resume;
+  } else {
+    return undefined;
+  }
 }
