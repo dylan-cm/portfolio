@@ -52,14 +52,14 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
             <img
               src={pictures[0]}
               alt={`${project.title} image 2`}
-              className="rounded object-cover aspect-mobile"
+              className="rounded object-cover aspect-mobile shadow-lg"
             />
           </a>
           <a href={pictures[1]}>
             <img
               src={pictures[1]}
               alt={`${project.title} image 3`}
-              className="rounded object-cover aspect-mobile"
+              className="rounded object-cover aspect-mobile shadow-lg"
             />
           </a>
         </div>
@@ -75,28 +75,28 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
           <img
             src={pictures[2]}
             alt={`${project.title} image 4`}
-            className="rounded object-cover aspect-square"
+            className="rounded object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[3]}>
           <img
             src={pictures[3]}
             alt={`${project.title} image 5`}
-            className="rounded object-cover aspect-square"
+            className="rounded object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[4]}>
           <img
             src={pictures[4]}
             alt={`${project.title} image 6`}
-            className="rounded object-cover aspect-square"
+            className="rounded object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[5]}>
           <img
             src={pictures[5]}
             alt={`${project.title} image 7`}
-            className="rounded object-cover aspect-square"
+            className="rounded object-cover aspect-square shadow-lg"
           />
         </a>
       </section>
@@ -105,7 +105,7 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
         <img
           src={pictures[6]}
           alt={`${project.title} image 8`}
-          className="rounded object-cover aspect-video"
+          className="rounded object-cover aspect-video shadow-lg"
         />
       </a>
       <Link href={"/"} className="mt-16 underline underline-offset-4">
