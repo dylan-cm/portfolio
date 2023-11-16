@@ -1,18 +1,41 @@
-import React from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { MdScience } from "react-icons/md";
-import { getImageURL, getImages, getProject } from "@/utils/firebase";
+import {
+  // getAllProjects,
+  getImageURL,
+  getImages,
+  getProject,
+} from "@/utils/firebase";
 import Video from "@/components/Video";
 
-const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
-  const project = await getProject(params.slug);
+interface ProjectPageProps {
+  params: {
+    projectId: string;
+  };
+}
+
+// export const revalidate = 5;
+
+// export async function generateStaticParams() {
+//   const projects = await getAllProjects();
+//   return projects.map((project) => ({
+//     projectId: project.id,
+//   }));
+// }
+
+const ProjectPage: React.FC<ProjectPageProps> = async ({ params }) => {
+  const project = await getProject(params.projectId);
   const header = await getImageURL(project?.videoId);
   const pictures = await getImages(project?.pictures);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return (
+      <div className="flex flex-col items-center justify-center w-full h-52">
+        Project not found.
+      </div>
+    );
   }
 
   return (
@@ -118,4 +141,4 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default ProjectDetails;
+export default ProjectPage;

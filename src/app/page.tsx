@@ -3,6 +3,8 @@ import ProjectCard from "../components/ProjectCard";
 import Hero from "@/components/Hero";
 import { getAllProjects } from "@/utils/firebase";
 
+export const dynamic = "force-dynamic";
+
 const Home = async () => {
   const projects = await getAllProjects();
 

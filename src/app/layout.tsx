@@ -12,7 +12,7 @@ const DEFAULT_SIZE = 4;
 const DEFAULT_SCALE = 12;
 const DEFAULT_PROXIMITY = 0.1;
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dylan Cortez-Modell",
@@ -63,7 +63,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body
-        className={`h-full min-h-screen w-full ${inter.className} flex flex-col items-center relative`}
+        className={`h-full min-h-screen w-full ${font.className} flex flex-col items-center relative`}
       >
         <Navbar />
         <div className="flex-grow min-h-[80vh] z-10 w-full">{children}</div>
