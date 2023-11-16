@@ -17,7 +17,10 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="container flex flex-col items-center mx-auto p-2 pt-8">
-      <section id="title" className="flex flex-col items-center w-full">
+      <section
+        id="title"
+        className="flex flex-col items-center w-full max-w-4xl"
+      >
         <h1 className="text-4xl font-bold mb-4 text-center">{project.title}</h1>
         <div className="flex gap-6 mb-16">
           <a
@@ -47,19 +50,19 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
       </section>
       <p className="my-16 max-w-6xl">{project.description1}</p>
       <section id="description1">
-        <div className="grid grid-cols-2 gap-4 w-full">
+        <div className="grid grid-cols-2 gap-4 w-full max-w-4xl">
           <a href={pictures[0]}>
             <img
               src={pictures[0]}
               alt={`${project.title} image 2`}
-              className="rounded object-cover aspect-mobile shadow-lg"
+              className="rounded-xl object-cover aspect-mobile shadow-lg"
             />
           </a>
           <a href={pictures[1]}>
             <img
               src={pictures[1]}
               alt={`${project.title} image 3`}
-              className="rounded object-cover aspect-mobile shadow-lg"
+              className="rounded-xl object-cover aspect-mobile shadow-lg"
             />
           </a>
         </div>
@@ -69,43 +72,43 @@ const ProjectDetails = async ({ params }: { params: { slug: string } }) => {
       </section>
       <section
         id="description3"
-        className="grid grid-cols-2 grid-flow-row gap-4 auto-rows-min"
+        className="grid grid-cols-2 grid-flow-row gap-4 auto-rows-min max-w-4xl"
       >
         <a href={pictures[2]}>
           <img
             src={pictures[2]}
             alt={`${project.title} image 4`}
-            className="rounded object-cover aspect-square shadow-lg"
+            className="rounded-xl object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[3]}>
           <img
             src={pictures[3]}
             alt={`${project.title} image 5`}
-            className="rounded object-cover aspect-square shadow-lg"
+            className="rounded-xl object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[4]}>
           <img
             src={pictures[4]}
             alt={`${project.title} image 6`}
-            className="rounded object-cover aspect-square shadow-lg"
+            className="rounded-xl object-cover aspect-square shadow-lg"
           />
         </a>
         <a href={pictures[5]}>
           <img
             src={pictures[5]}
             alt={`${project.title} image 7`}
-            className="rounded object-cover aspect-square shadow-lg"
+            className="rounded-xl object-cover aspect-square shadow-lg"
           />
         </a>
       </section>
       <p className="my-16 max-w-6xl">{project.description3}</p>
-      <a href={pictures[6]}>
+      <a href={pictures[6]} className="max-w-4xl">
         <img
           src={pictures[6]}
           alt={`${project.title} image 8`}
-          className="rounded object-cover aspect-video shadow-lg"
+          className="rounded-xl object-cover aspect-video shadow-lg"
         />
       </a>
       <Link href={"/"} className="mt-16 underline underline-offset-4">
